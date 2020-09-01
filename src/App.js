@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Parent from './Parent'
+import ValueContext from './ValueContext';
 
 function App() {
+  let value=React.useState(30);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <ValueContext.Provider value={value}>
+    <div className="App-header">
+      Hello World
+    <br/>
+    <Parent/>
     </div>
+    </ValueContext.Provider>
   );
 }
 
